@@ -4,7 +4,7 @@ import javaminx.data.models.Megaminx;
 
 public class OrangePrismHandler {
     public Megaminx handle(Megaminx minx){
-        //todo: implement this
+        // implement this
         return minx;
     }
 }

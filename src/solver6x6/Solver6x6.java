@@ -48,7 +48,7 @@ public class Solver6x6 {
     public Cube solve(Cube cube){
         cube = this.solveCenter(cube);
         cube = this.solveEdges(cube);
-        // todo: implement remaining code
+        // implement remaining code
         return cube;
     }
 }

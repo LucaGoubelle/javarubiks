@@ -4,7 +4,7 @@ import javarubik.data.Cube;
 
 public class BlueCenterHandler {
     public Cube handle(Cube cube){
-        // todo: implement this
+        // implement this
         return cube;
     }
 }

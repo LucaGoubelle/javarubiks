@@ -48,7 +48,7 @@ public class Solver4x4 {
     public Cube solve(Cube cube){
         cube = this.solveCenters(cube);
         cube = this.solveEdges(cube);
-        //todo: implement remaining lines
+        // implement remaining lines
         return cube;
     }
 }

@@ -1,6 +1,7 @@
 package solverMegaminx.handlers.firstFace;
 
 import javaminx.data.models.Megaminx;
+import javaminx.exceptions.MinxMoverException;
 import javaminx.move.mega.MegaminxMover;
 import minxSolverHelpers.megaminx.MegaminxScanner;
 import solverMegaminx.processors.CenterProcessor;
@@ -16,7 +17,7 @@ public class StartHandler {
         this.processor = new CenterProcessor();
     }
 
-    public Megaminx handle(Megaminx minx){
+    public Megaminx handle(Megaminx minx) throws MinxMoverException {
         String centerDown = this.scanner.scanCenter(minx, "down");
         String centerDownLeft = this.scanner.scanCenter(minx, "downLeft");
         String centerDownRight = this.scanner.scanCenter(minx, "downRight");
@@ -26,7 +27,7 @@ public class StartHandler {
         return this.startOrienting(minx, data);
     }
 
-    private Megaminx startOrienting(Megaminx minx, String data){
+    private Megaminx startOrienting(Megaminx minx, String data) throws MinxMoverException {
         String result = this.processor.process(data);
         minx = (Megaminx) this.mover.multiMoves(minx, result);
         return minx;

@@ -2,6 +2,7 @@ package solverMegaminx;
 
 import javaminx.data.models.Megaminx;
 
+import javaminx.exceptions.MinxMoverException;
 import solverMegaminx.handlers.*;
 import solverMegaminx.handlers.firstFace.*;
 import solverMegaminx.handlers.lastFace.*;
@@ -30,7 +31,7 @@ public class SolverMegaminx {
         this.lastCornersHandler = new LastCornersHandler();
     }
 
-    private Megaminx solveFirstFace(Megaminx minx){
+    private Megaminx solveFirstFace(Megaminx minx) throws MinxMoverException {
         minx = this.startHandler.handle(minx);
         minx = this.whiteStarHandler.handle(minx);
         minx = this.firstCornersHandler.handle(minx);
@@ -55,12 +56,11 @@ public class SolverMegaminx {
         return minx;
     }
 
-    public Megaminx solve(Megaminx minx){
+    public Megaminx solve(Megaminx minx) throws MinxMoverException {
         minx = this.solveFirstFace(minx);
         minx = this.solveSecondPart(minx);
         minx = this.solveThirdPart(minx);
         minx = this.solveLastFace(minx);
         return minx;
     }
-
 }

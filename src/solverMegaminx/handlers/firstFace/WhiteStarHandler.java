@@ -1,6 +1,7 @@
 package solverMegaminx.handlers.firstFace;
 
 import javaminx.data.models.Megaminx;
+import javaminx.exceptions.MinxMoverException;
 import javaminx.move.mega.MegaminxMover;
 import minxSolverHelpers.megaminx.MegaminxEdgeSeeker;
 import solverMegaminx.processors.firstEdges.WBProcessor;
@@ -26,7 +27,7 @@ public class WhiteStarHandler {
         this.wyProcessor = new WYProcessor();
     }
 
-    public Megaminx handle(Megaminx minx){
+    public Megaminx handle(Megaminx minx) throws MinxMoverException {
         minx = this._handleWBEdge(minx);
         minx = this._handleWREdge(minx);
         minx = this._handleWYEdge(minx);
@@ -35,25 +36,25 @@ public class WhiteStarHandler {
         return minx;
     }
 
-    private Megaminx _handleWBEdge(Megaminx minx){
+    private Megaminx _handleWBEdge(Megaminx minx) throws MinxMoverException {
         String edge = this.seeker.seekEdge(minx, List.of(new String[]{"white_blue", "blue_white"}));
         String result = this.wbProcessor.process(edge);
         return (Megaminx) this.mover.multiMoves(minx, result);
     }
 
-    private Megaminx _handleWREdge(Megaminx minx){
+    private Megaminx _handleWREdge(Megaminx minx) throws MinxMoverException {
         String edge = this.seeker.seekEdge(minx, List.of(new String[]{"white_red", "red_white"}));
         String result = this.wrProcessor.process(edge);
         return (Megaminx) this.mover.multiMoves(minx, result);
     }
 
-    private Megaminx _handleWYEdge(Megaminx minx){
+    private Megaminx _handleWYEdge(Megaminx minx) throws MinxMoverException {
         String edge = this.seeker.seekEdge(minx, List.of(new String[]{"white_yellow", "yellow_white"}));
         String result = this.wyProcessor.process(edge);
         return (Megaminx) this.mover.multiMoves(minx, result);
     }
 
-    private Megaminx _handleWGEdge(Megaminx minx){
+    private Megaminx _handleWGEdge(Megaminx minx) throws MinxMoverException {
         String result = this.seeker.seekEdge(minx, List.of(new String[]{"white_green", "green_white"}));
         HashMap<String, String> hmap = new HashMap<>();
         hmap.put("down_absRight::white_green", "");
@@ -61,7 +62,7 @@ public class WhiteStarHandler {
         return (Megaminx) this.mover.multiMoves(minx, hmap.getOrDefault(result, ""));
     }
 
-    private Megaminx _handleWPEdge(Megaminx minx){
+    private Megaminx _handleWPEdge(Megaminx minx) throws MinxMoverException {
         String result = this.seeker.seekEdge(minx, List.of(new String[]{"white_purple", "green_purple"}));
         HashMap<String, String> hmap = new HashMap<>();
         hmap.put("down_back::white_purple", "");
