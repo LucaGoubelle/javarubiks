@@ -1,0 +1,3 @@
+
+- finish implementing draw megaminx
+- implement kilominx moves

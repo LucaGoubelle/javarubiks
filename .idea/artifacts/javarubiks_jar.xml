@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="javarubiks:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/javarubiks_jar</output-path>
+    <root id="archive" name="javarubiks.jar">
+      <element id="module-output" name="javarubiks" />
+    </root>
+  </artifact>
+</component>

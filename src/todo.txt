@@ -1,0 +1,6 @@
+
+- finish implementing draw megaminx
+- implement kilominx moves
+
+v - start implementing solver kilominx
+- start implementing solver Megaminx
