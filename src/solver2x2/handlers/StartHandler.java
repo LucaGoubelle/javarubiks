@@ -1,111 +1,45 @@
 package solver2x2.handlers;
 
 import javarubik.data.Cube;
+import javarubik.exceptions.CubeMoveException;
 import javarubik.move.Mover;
 
+import solver2x2.processors.WBRProcessor;
 import solverHelpers.scanners.Cube2x2Scanner;
+import solverHelpers.seekers.Corner2Seeker;
 
-import java.util.HashMap;
+import java.util.List;
 
 public class StartHandler {
 
     private final Mover mover;
     private final Cube2x2Scanner scanner;
+    private final WBRProcessor proc;
+    private final Corner2Seeker seeker;
 
     public StartHandler(){
         this.mover = new Mover();
+        this.proc = new WBRProcessor();
         this.scanner = new Cube2x2Scanner();
+        this.seeker = new Corner2Seeker();
+        
     }
 
-    private Cube analyseUpFrontRight(Cube cube){
-        String result = this.scanner.scanCorner(cube, "up_front_right");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_red_blue","U' R2");
-        hmap.put("red_blue_white","F");
-        hmap.put("blue_white_red","R'");
-        return (hmap.containsKey(result)) ? this.mover.multiMoves(cube, hmap.get(result)) : cube;
-    }
-
-    private Cube analyseUpFrontLeft(Cube cube){
-        String result = this.scanner.scanCorner(cube, "up_front_left");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_blue_red","U2 R2");
-        hmap.put("red_white_blue","U' F");
-        hmap.put("blue_red_white","U' R'");
-        return (hmap.containsKey(result)) ? this.mover.multiMoves(cube, hmap.get(result)) : cube;
-    }
-
-    private Cube analyseUpBackRight(Cube cube){
-        String result = this.scanner.scanCorner(cube, "up_back_right");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_blue_red","R2");
-        hmap.put("blue_red_white","U R'");
-        hmap.put("red_white_blue","U F");
-        return (hmap.containsKey(result)) ? this.mover.multiMoves(cube, hmap.get(result)) : cube;
-    }
-
-    private Cube analyseUpBackLeft(Cube cube){
-        String result = this.scanner.scanCorner(cube, "up_back_left");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_red_blue","U R2");
-        hmap.put("red_blue_white","U2 F");
-        hmap.put("blue_white_red","U2 R'");
-        return (hmap.containsKey(result)) ? this.mover.multiMoves(cube, hmap.get(result)) : cube;
-    }
-
-    private Cube analyseDonwBackLeft(Cube cube){
-        String result = this.scanner.scanCorner(cube, "down_back_left");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_blue_red","D2");
-        hmap.put("red_white_blue","L' D");
-        hmap.put("blue_red_white","L'F'");
-        return (hmap.containsKey(result)) ? this.mover.multiMoves(cube, hmap.get(result)) : cube;
-    }
-
-    private Cube analyseDownBackRight(Cube cube){
-        String result = this.scanner.scanCorner(cube, "down_back_right");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_red_blue","D'");
-        hmap.put("blue_white_red","R");
-        hmap.put("red_blue_white","R2 F");
-        return (hmap.containsKey(result)) ? this.mover.multiMoves(cube, hmap.get(result)) : cube;
-    }
-
-    private Cube analyseDownFrontLeft(Cube cube){
-        String result = this.scanner.scanCorner(cube, "down_front_left");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_red_blue","D");
-        hmap.put("blue_white_red","L D2");
-        hmap.put("red_blue_white","F'");
-        return (hmap.containsKey(result)) ? this.mover.multiMoves(cube, hmap.get(result)) : cube;
-    }
-    private Cube analyseUp(Cube cube){
-        cube = this.analyseUpFrontRight(cube);
-        cube = this.analyseUpFrontLeft(cube);
-        cube = this.analyseUpBackRight(cube);
-        cube = this.analyseUpBackLeft(cube);
-        return cube;
-    }
-
-    private Cube analyseDown(Cube cube){
-        cube = this.analyseDownFrontLeft(cube);
-        cube = this.analyseDonwBackLeft(cube);
-        cube = this.analyseDownBackRight(cube);
-        return cube;
-    }
-
-    public Cube start(Cube cube){
+    public Cube start(Cube cube) throws CubeMoveException {
         String preResult = this.scanner.scanCorner(cube, "down_front_right");
-        HashMap<String, String> hmap = new HashMap<>();
-        hmap.put("white_blue_red","");
-        hmap.put("red_white_blue","R' D'");
-        hmap.put("blue_red_white","F D");
-        if(hmap.containsKey(preResult)){
-            cube = this.mover.multiMoves(cube, hmap.get(preResult));
-        } else {
-            cube = this.analyseUp(cube);
-            cube = this.analyseDown(cube);
-        }
+        if(preResult.equals("white_blue_red"))
+            return cube; // nothing to do
+        return this.handleFirstCorner(cube);
+    }
+
+    private Cube handleFirstCorner(Cube cube) throws CubeMoveException {
+        String inputData = this.seeker.seekCorner(cube, List.of(new String[]{
+                "white_blue_red", "white_red_blue",
+                "blue_white_red", "blue_red_white",
+                "red_white_blue", "red_blue_white"
+        }));
+        String sequence = this.proc.process(inputData);
+        cube = this.mover.multiMoves(cube, sequence);
         return cube;
     }
 }

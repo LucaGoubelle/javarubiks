@@ -2,6 +2,7 @@ package solver2x2;
 
 import javarubik.data.Cube;
 
+import javarubik.exceptions.CubeMoveException;
 import solver2x2.handlers.*;
 
 public class Solver2x2 {
@@ -15,7 +16,7 @@ public class Solver2x2 {
         this.lastLayerHandler = new LastLayerHandler();
     }
 
-    public Cube solve(Cube cube){
+    public Cube solve(Cube cube) throws CubeMoveException {
         cube = this.startHandler.start(cube);
         cube = this.firstLayerHandler.handle(cube);
         cube = this.lastLayerHandler.handle(cube);
