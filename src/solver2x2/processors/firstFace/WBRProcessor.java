@@ -1,4 +1,4 @@
-package solver2x2.processors;
+package solver2x2.processors.firstFace;
 
 import java.util.HashMap;
 

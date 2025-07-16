@@ -1,11 +1,11 @@
-package solver2x2.processors;
+package solver2x2.processors.lastFace;
 
 import java.util.HashMap;
 
-public class WGOProcessor {
+public class PLLProcessor {
     private HashMap<String, String> data;
 
-    public WGOProcessor(){
+    public PLLProcessor(){
         this.data = new HashMap<>();
     }
 

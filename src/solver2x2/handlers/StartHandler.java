@@ -4,7 +4,7 @@ import javarubik.data.Cube;
 import javarubik.exceptions.CubeMoveException;
 import javarubik.move.Mover;
 
-import solver2x2.processors.WBRProcessor;
+import solver2x2.processors.firstFace.WBRProcessor;
 import solverHelpers.scanners.Cube2x2Scanner;
 import solverHelpers.seekers.Corner2Seeker;
 

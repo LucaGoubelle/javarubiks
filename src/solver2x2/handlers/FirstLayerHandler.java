@@ -3,9 +3,9 @@ package solver2x2.handlers;
 import javarubik.data.Cube;
 import javarubik.exceptions.CubeMoveException;
 import javarubik.move.Mover;
-import solver2x2.processors.WBOProcessor;
-import solver2x2.processors.WGOProcessor;
-import solver2x2.processors.WGRProcessor;
+import solver2x2.processors.firstFace.WBOProcessor;
+import solver2x2.processors.firstFace.WGOProcessor;
+import solver2x2.processors.firstFace.WGRProcessor;
 import solverHelpers.seekers.Corner2Seeker;
 
 import java.util.List;
