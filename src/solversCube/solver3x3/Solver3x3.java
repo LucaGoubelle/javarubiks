@@ -2,6 +2,7 @@ package solversCube.solver3x3;
 
 import javarubik.data.Cube;
 
+import javarubik.exceptions.CubeMoveException;
 import solversCube.solver3x3.handlers.*;
 
 public class Solver3x3 {
@@ -21,14 +22,13 @@ public class Solver3x3 {
         this.lastCornersHandler = new LastCornersHandler();
     }
 
-    public Cube solve(Cube cube){
+    public Cube solve(Cube cube) throws CubeMoveException {
         cube = this.startHandler.start(cube);
         cube = this.whiteCrossHandler.handle(cube);
         cube = this.firstLayerHandler.handle(cube);
         cube = this.secondLayerHandler.handle(cube);
         cube = this.yellowCrossHandler.handle(cube);
         cube = this.lastCornersHandler.handle(cube);
-
         return cube;
     }
 }

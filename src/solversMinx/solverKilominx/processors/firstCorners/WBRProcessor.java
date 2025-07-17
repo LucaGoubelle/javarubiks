@@ -14,7 +14,7 @@ public class WBRProcessor {
         this.data.put("up_backRight_right::white_blue_red", "U F2 DL");
         this.data.put("up_backLeft_backRight::white_blue_red", "U2 F2 DL");
 
-        // todo: add cases to processes
+        // add cases to processes
 
         //down cases
         this.data.put("down_downLeft_absLeft", "D ");

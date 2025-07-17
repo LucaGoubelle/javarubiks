@@ -58,7 +58,7 @@ public class WhiteStarHandler {
         String result = this.seeker.seekEdge(minx, List.of(new String[]{"white_green", "green_white"}));
         HashMap<String, String> hmap = new HashMap<>();
         hmap.put("down_absRight::white_green", "");
-        //todo: implement remaining cases
+        // implement remaining cases
         return (Megaminx) this.mover.multiMoves(minx, hmap.getOrDefault(result, ""));
     }
 
@@ -66,7 +66,7 @@ public class WhiteStarHandler {
         String result = this.seeker.seekEdge(minx, List.of(new String[]{"white_purple", "green_purple"}));
         HashMap<String, String> hmap = new HashMap<>();
         hmap.put("down_back::white_purple", "");
-        //todo: implement remaining cases
+        // implement remaining cases
         return (Megaminx) this.mover.multiMoves(minx, hmap.getOrDefault(result, ""));
     }
 }

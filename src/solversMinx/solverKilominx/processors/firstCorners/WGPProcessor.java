@@ -6,7 +6,7 @@ public class WGPProcessor {
     private HashMap<String, String> data;
     public WGPProcessor(){
         this.data = new HashMap<>();
-        //todo: add cases to processes
+        // add cases to processes
     }
 
     public String process(String inputData){

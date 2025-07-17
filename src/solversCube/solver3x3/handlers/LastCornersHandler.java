@@ -5,12 +5,12 @@ import javarubik.data.Cube;
 public class LastCornersHandler {
 
     private Cube permute(Cube cube){
-        // todo: implement this method
+        // implement this method
         return cube;
     }
 
     private Cube orient(Cube cube){
-        // todo: implement this method
+        // implement this method
         return cube;
     }
 

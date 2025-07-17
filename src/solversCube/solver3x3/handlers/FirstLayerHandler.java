@@ -5,22 +5,22 @@ import javarubik.data.Cube;
 public class FirstLayerHandler {
 
     private Cube insertWBR(Cube cube){
-        // todo: implement this method
+        // implement this method
         return cube;
     }
 
     private Cube insertWGR(Cube cube){
-        // todo: implement this method
+        // implement this method
         return cube;
     }
 
     private Cube insertWGO(Cube cube){
-        // todo: implement this method
+        // implement this method
         return cube;
     }
 
     private Cube insertWBO(Cube cube){
-        // todo: implement this method
+        // implement this method
         return cube;
     }
 

@@ -6,7 +6,7 @@ public class WBYProcessor {
     private HashMap<String, String> data;
     public WBYProcessor(){
         this.data = new HashMap<>();
-        //todo: add cases to processes
+        // add cases to processes
     }
 
     public String process(String inputData){

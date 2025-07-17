@@ -2,6 +2,7 @@ package javaminx.move;
 
 import javaminx.move.kilo.KilominxMover;
 import javaminx.move.mega.MegaminxMover;
+import javaminx.move.mk.MasterKilominxMover;
 
 public class MinxMoverFactory {
 
@@ -13,6 +14,7 @@ public class MinxMoverFactory {
         return switch (puzzleType) {
             case "kilominx" -> new KilominxMover();
             case "megaminx" -> new MegaminxMover();
+            case "masterKilominx" -> new MasterKilominxMover();
             default -> new MegaminxMover();
         };
     }

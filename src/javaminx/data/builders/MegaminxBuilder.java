@@ -36,6 +36,5 @@ public class MegaminxBuilder extends MinxBuilder {
         } catch(Exception exc){
             throw new MinxBuilderException();
         }
-
     }
 }

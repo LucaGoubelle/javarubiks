@@ -3,23 +3,23 @@ package solversCube.solver3x3.handlers;
 import javarubik.data.Cube;
 
 public class WhiteCrossHandler {
-    public Cube insertWB(Cube cube){
-        //todo: implement this method
+    private Cube insertWB(Cube cube){
+        // implement this method
         return cube;
     }
 
-    public Cube insertWR(Cube cube){
-        //todo: implement this method
+    private Cube insertWR(Cube cube){
+        // implement this method
         return cube;
     }
 
-    public Cube insertWG(Cube cube){
-        //todo: implement this method
+    private Cube insertWG(Cube cube){
+        // implement this method
         return cube;
     }
 
-    public Cube insertWO(Cube cube){
-        //todo: implement this method
+    private Cube insertWO(Cube cube){
+        // implement this method
         return cube;
     }
 

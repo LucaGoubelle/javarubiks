@@ -31,7 +31,6 @@ public class StartHandler {
     }
 
     private Kilominx startFirstPiece(Kilominx minx) throws MinxMoverException {
-        //todo: implement this
         String corner = this.seeker.seekCorner(minx,
                 List.of(new String[]{
                         "white_blue_red","white_red_blue",

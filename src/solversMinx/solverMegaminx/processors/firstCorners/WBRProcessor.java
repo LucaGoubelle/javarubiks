@@ -7,7 +7,7 @@ public class WBRProcessor {
 
     public WBRProcessor(){
         this.data = new HashMap<>();
-        //todo: add cases to processes
+        // add cases to processes
     }
 
     public String process(String inputData){

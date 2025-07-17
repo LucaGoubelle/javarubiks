@@ -1,6 +1,7 @@
 package solversCube.solver3x3.handlers;
 
 import javarubik.data.Cube;
+import javarubik.exceptions.CubeMoveException;
 import javarubik.move.Mover;
 
 import solverHelpers.scanners.Cube3x3Scanner;
@@ -17,7 +18,7 @@ public class StartHandler {
         this.scanner = new Cube3x3Scanner();
     }
 
-    public Cube start(Cube cube){
+    public Cube start(Cube cube) throws CubeMoveException {
         String result1 = this.scanner.scanCenter(cube, "up");
         String result2 = this.scanner.scanCenter(cube, "front");
         String result = result1 + "_" + result2;

@@ -5,22 +5,22 @@ import javarubik.data.Cube;
 public class SecondLayerHandler {
 
     private Cube insertBR(Cube cube){
-        //todo: implement this method
+        // implement this method
         return cube;
     }
 
     private Cube insertGR(Cube cube){
-        //todo: implement this method
+        // implement this method
         return cube;
     }
 
     private Cube insertGO(Cube cube){
-        //todo: implement this method
+        // implement this method
         return cube;
     }
 
     private Cube insertBO(Cube cube){
-        //todo: implement this method
+        // implement this method
         return cube;
     }
 
