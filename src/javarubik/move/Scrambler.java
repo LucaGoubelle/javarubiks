@@ -1,6 +1,7 @@
 package javarubik.move;
 
 import javarubik.data.Cube;
+import javarubik.exceptions.CubeMoveException;
 
 import java.util.Random;
 
@@ -10,7 +11,7 @@ public class Scrambler {
     public Scrambler(){
         this.mover = new Mover();
     }
-    public Cube scramble(Cube cube){
+    public Cube scramble(Cube cube) throws CubeMoveException {
         int size = cube.front.length;
         return switch (size) {
             case 2, 3 -> this.scrambleSimpleCube(cube);
@@ -20,7 +21,7 @@ public class Scrambler {
         };
     }
 
-    private Cube scrambleSimpleCube(Cube cube){
+    private Cube scrambleSimpleCube(Cube cube) throws CubeMoveException {
         String[] scrambles = new String[]{
                 "F' L2 R2 D2 L2 D R' F' U B L R2 U' L U L' R D' L F2 B' D' L' D U2",
                 "B2 D2 U' F L2 R' F L R F2 D2 L B' U2 D' R U' B U2 R U2 D' L F' B",
@@ -34,7 +35,7 @@ public class Scrambler {
         return cube;
     }
 
-    private Cube scrambleBigCube(Cube cube){
+    private Cube scrambleBigCube(Cube cube) throws CubeMoveException {
         String[] scrambles = new String[]{
                 "U' F2 U' Fw' U' Dw R F2 U B2 R' B Fw U L' Uw Lw Dw2 U Fw2 Lw Uw' F U' Bw' D Fw Lw2",
                 "F Lw2 F' Uw' Fw B' Lw2 Fw Lw2 D Fw2 D' U' R U2 B' D' F' Rw Lw2 U Dw2 Bw' L' Fw L",
@@ -46,7 +47,7 @@ public class Scrambler {
         return cube;
     }
 
-    private Cube scrambleHugeCube(Cube cube){
+    private Cube scrambleHugeCube(Cube cube) throws CubeMoveException {
         String scramble = "R Dw2 L' Fw2 Bww' Lww Dww' F Bw Dww F Dww2 Rww Lw2 Fw' Rw D2 B D2 Bww2 Fw Dww ";
         scramble += "Fw' Lww' Bww2 F' Lw Dww Uww' Rw F' U Rww' Fw2 D' Bww D2 Lw Bw Lw Bww' U' F Rww Bw2 ";
         scramble += "Dww2 Fw Bw2 Lww' B2 Uww' Fw B2 Dw' Uww Lw' Uw2 Bw2 D' L' Uw' Lw2 U2 Dw' L Fww R2 " +

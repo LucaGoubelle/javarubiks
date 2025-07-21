@@ -38,4 +38,17 @@ public class FaceDrawer {
             }
         }
     }
+
+    public void drawUpFace(Graphics2D g2, String[][] face, int x, int y, int size){
+        int half = size / 2;
+        int offset = 2;
+        int len = face.length;
+        for(int i=0;i<len;i++) {
+            for(int j=0;j<len;j++){
+                int xEnd = x+(j*size)+(j*offset)-((i*half)+(i*offset));
+                int yEnd = y+(i*half)+(i*offset);
+                this.stickerDrawer.drawUpSticker(g2, face[i][j], xEnd, yEnd, size);
+            }
+        }
+    }
 }

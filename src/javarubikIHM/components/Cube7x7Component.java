@@ -11,7 +11,7 @@ public class Cube7x7Component extends CubeComponent {
 
     @Override
     protected void drawUp(Graphics2D g2, int x, int y, int size, int offset) {
-        int sizeDepth = (int) size / 2;
+        /*int sizeDepth = (int) size / 2;
         for(int i=0;i<this.cube.up.length;i++){
             int x0 = x+sizeDepth+size*i+offset*i;
             int x1 = x+size*(i+1)+offset*(i+1);
@@ -36,7 +36,8 @@ public class Cube7x7Component extends CubeComponent {
             this.stickerDrawer.drawUpSticker(g2, this.cube.up[2][i], x4, y4, size);
             this.stickerDrawer.drawUpSticker(g2, this.cube.up[1][i], x5, y5, size);
             this.stickerDrawer.drawUpSticker(g2, this.cube.up[0][i], x6, y6, size);
-        }
+        }*/
+        this.faceDrawer.drawUpFace(g2, this.cube.up, x,y, size);
     }
 
     @Override
@@ -47,9 +48,10 @@ public class Cube7x7Component extends CubeComponent {
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         int x = 250, y=250, size=30, offset=2;
+        int up_offset = 118;
 
         this.faceDrawer.drawFrontFace(g2, this.cube.front, x,y, size);
-        this.drawUp(g2, x,y,size,offset);
+        this.drawUp(g2, x+up_offset,y-up_offset,size,offset);
         this.drawRight(g2, x,y,size,offset);
 
         //clean all

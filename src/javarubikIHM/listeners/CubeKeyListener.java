@@ -2,6 +2,8 @@ package javarubikIHM.listeners;
 
 import javarubik.data.CubeBuilder;
 
+import javarubik.exceptions.CubeBuilderException;
+import javarubik.exceptions.CubeMoveException;
 import javarubik.move.Mover;
 import javarubik.move.Scrambler;
 
@@ -126,11 +128,19 @@ public class CubeKeyListener implements KeyListener {
                 this.component.repaint();
                 break;
             case 32:
-                this.component.setCube(this.scrambler.scramble(this.component.getCube()));
+                try {
+                    this.component.setCube(this.scrambler.scramble(this.component.getCube()));
+                } catch (CubeMoveException e) {
+                    throw new RuntimeException(e);
+                }
                 this.component.repaint();
                 break;
             case 27:
-                this.component.setCube(this.builder.build(this.component.getCube().front.length));
+                try {
+                    this.component.setCube(this.builder.build(this.component.getCube().front.length));
+                } catch (CubeBuilderException e) {
+                    throw new RuntimeException(e);
+                }
                 this.component.repaint();
                 break;
         }

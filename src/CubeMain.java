@@ -11,7 +11,7 @@ import java.awt.*;
 public class CubeMain {
 
     public static void main(String[] args) throws Exception {
-        int cubeSize = 5;
+        int cubeSize = 7;
 
         CubeBuilder builder = new CubeBuilder();
         CubeComponentFactory factory = new CubeComponentFactory();
