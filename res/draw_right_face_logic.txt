@@ -1,0 +1,9 @@
+x, y, size, offset
+
+half = size / 2;
+
+for i ...
+    for j ...
+        x_actual = x+(j*half)+(j*offset);
+        y_actual = y+(i*size)+(i*offset)-((j*half)+(j*offset));
+        draw( img1, x_actual, y_actual, face[i][j]);
