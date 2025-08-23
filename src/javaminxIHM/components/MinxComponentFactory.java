@@ -12,6 +12,7 @@ public class MinxComponentFactory {
         return switch (puzzleType) {
             case "kilominx" -> new KilominxComponent((Kilominx) this.minx);
             case "megaminx" -> new MegaminxComponent((Megaminx) this.minx);
+            case "masterKilominx" -> new MasterKilominxComponent((MasterKilominx) this.minx);
             default -> new MegaminxComponent((Megaminx) this.minx);
         };
     }
