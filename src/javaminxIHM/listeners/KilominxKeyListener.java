@@ -7,7 +7,7 @@ import javaminxIHM.components.MinxComponent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class KilominxKeyListener implements KeyListener {
+public class KilominxKeyListener extends MinxKeyListener implements KeyListener {
 
     private final KilominxMover kilominxMover;
     private MinxComponent minxComponent;
