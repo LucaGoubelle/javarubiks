@@ -27,7 +27,7 @@ public class MinxMain {
     }
 
     public static void main(String[] args) throws MinxBuilderException {
-        String puzzleType = "kilominx";
+        String puzzleType = "masterKilominx";
 
         MinxFactory minxFactory = new MinxFactory();
         Minx minx = minxFactory.make(puzzleType);
