@@ -68,12 +68,47 @@ public class MasterKilominxDrawer {
         Polygon p4 = new Polygon(new int[]{279,338,355,297}, new int[]{128,128,184,184},4);
         Polygon p5 = new Polygon(new int[]{297,355,364,312}, new int[]{184,184,212,229},4);
 
+        Polygon p6 = new Polygon(new int[]{312,364,374,326}, new int[]{229,212,240,274}, 4);
+        Polygon p7 = new Polygon(new int[]{326,374,392,344}, new int[]{274,240,296,330}, 4);
+        Polygon p8 = new Polygon(new int[]{326,345,321,288}, new int[]{274,330,348,303}, 4);
+        Polygon p9 = new Polygon(new int[]{288,321,297,250}, new int[]{303,348,365,330}, 4);
+        Polygon p10 = new Polygon(new int[]{250,297,249,202}, new int[]{330,365,399,365},4);
+
+        Polygon p11 = new Polygon(new int[]{211,250,202,178}, new int[]{303,330,365,348}, 4);
+        Polygon p12 = new Polygon(new int[]{173,211,178,154}, new int[]{275,303,348,330}, 4);
+        Polygon p13 = new Polygon(new int[]{125,173,154,107}, new int[]{241,275,330,296}, 4);
+        Polygon p14 = new Polygon(new int[]{135,188,172,125}, new int[]{211,229,275,240}, 4);
+        Polygon p15 = new Polygon(new int[]{143,202,187,134}, new int[]{184,184,229,212}, 4);
+
+        Polygon p16 = new Polygon(new int[]{202,250,250,187}, new int[]{184,184,249,229},4);
+        Polygon p17 = new Polygon(new int[]{250,297,312,250}, new int[]{184,184,229,250},4);
+        Polygon p18 = new Polygon(new int[]{250,312,329,288}, new int[]{250,229,274,303},4);
+        Polygon p19 = new Polygon(new int[]{250,288,250,211}, new int[]{250,303,330,303},4);
+        Polygon p20 = new Polygon(new int[]{187,250,211,172}, new int[]{229,249,303,274},4);
+
         this.stickerDrawer.drawSticker(g2, p1, minx.front[0][0]);
         this.stickerDrawer.drawSticker(g2, p2, minx.front[0][1]);
         this.stickerDrawer.drawSticker(g2, p3, minx.front[0][2]);
         this.stickerDrawer.drawSticker(g2, p4, minx.front[0][3]);
         this.stickerDrawer.drawSticker(g2, p5, minx.front[0][4]);
 
+        this.stickerDrawer.drawSticker(g2, p6, minx.front[0][5]);
+        this.stickerDrawer.drawSticker(g2, p7, minx.front[0][6]);
+        this.stickerDrawer.drawSticker(g2, p8, minx.front[0][7]);
+        this.stickerDrawer.drawSticker(g2, p9, minx.front[0][8]);
+        this.stickerDrawer.drawSticker(g2, p10, minx.front[0][9]);
+
+        this.stickerDrawer.drawSticker(g2, p11, minx.front[0][10]);
+        this.stickerDrawer.drawSticker(g2, p12, minx.front[0][11]);
+        this.stickerDrawer.drawSticker(g2, p13, minx.front[0][12]);
+        this.stickerDrawer.drawSticker(g2, p14, minx.front[0][13]);
+        this.stickerDrawer.drawSticker(g2, p15, minx.front[0][14]);
+
+        this.stickerDrawer.drawSticker(g2, p16, minx.front[1][0]);
+        this.stickerDrawer.drawSticker(g2, p17, minx.front[1][1]);
+        this.stickerDrawer.drawSticker(g2, p18, minx.front[1][2]);
+        this.stickerDrawer.drawSticker(g2, p19, minx.front[1][3]);
+        this.stickerDrawer.drawSticker(g2, p20, minx.front[1][4]);
     }
 
     public void drawLeft(Graphics2D g2, MasterKilominx minx){
