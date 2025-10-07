@@ -11,7 +11,7 @@ public class MegaminxRotateUtils {
     public String[][] copyFace(String[][] face){
         return new String[][]{
                 {
-                    face[0][0], face[0][1], face[0][2], face[0][3], face[0][4],
+                        face[0][0], face[0][1], face[0][2], face[0][3], face[0][4],
                         face[0][5], face[0][6], face[0][7], face[0][8], face[0][9],
                 },
                 { face[1][0] }
