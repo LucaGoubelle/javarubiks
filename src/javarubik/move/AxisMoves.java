@@ -1,15 +1,9 @@
 package javarubik.move;
 
 import javarubik.data.Cube;
-import javarubik.move.helpers.RotateUtils;
 
-public class AxisMoves {
+public class AxisMoves extends Moves {
 
-    private final RotateUtils rotateUtils;
-
-    public AxisMoves(){
-        this.rotateUtils = new RotateUtils();
-    }
     public Cube moveY(Cube cube){
         cube.up = this.rotateUtils.rotate(cube.up);
         cube.down = this.rotateUtils.rotateAsync(cube.down);

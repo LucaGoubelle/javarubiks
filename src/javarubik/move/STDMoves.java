@@ -2,27 +2,25 @@ package javarubik.move;
 
 import javarubik.data.Cube;
 
-import java.util.Optional;
+public class STDMoves extends Moves {
 
-public class WMoves extends Moves {
+    //#########################################################
+    //################## U MOVES ##############################
+    //#########################################################
 
-    // U
-    public Cube moveUw(Cube cube, Optional<Integer> nbLayers){
+    public Cube moveU(Cube cube){
         int size = cube.up.length;
-        int layers = nbLayers.orElse(2);
         cube.up = this.rotateUtils.rotate(cube.up);
         String[][] newFront = this.rotateUtils.genEmptyFace(size);
         String[][] newLeft = this.rotateUtils.genEmptyFace(size);
         String[][] newRight = this.rotateUtils.genEmptyFace(size);
         String[][] newBack = this.rotateUtils.genEmptyFace(size);
 
-        for(int j=0;j<layers;j++){
-            for (int i=0;i<size;i++){
-                newFront[j][i] = cube.right[j][i];
-                newLeft[j][i] = cube.front[j][i];
-                newRight[j][i] = cube.back[j][i];
-                newBack[j][i] = cube.left[j][i];
-            }
+        for (int i=0;i<size;i++){
+            newFront[0][i] = cube.right[0][i];
+            newLeft[0][i] = cube.front[0][i];
+            newRight[0][i] = cube.back[0][i];
+            newBack[0][i] = cube.left[0][i];
         }
 
         cube.front = this.rotateUtils.transfert(cube.front, newFront);
@@ -33,23 +31,24 @@ public class WMoves extends Moves {
         return cube;
     }
 
-    public Cube moveUwPrime(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveUPrime(Cube cube){
         for(int i=0;i<3;i++)
-            cube = this.moveUw(cube, nbLayer);
+            cube = this.moveU(cube);
         return cube;
     }
 
-    public Cube moveUw2(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveU2(Cube cube){
         for(int i=0;i<2;i++)
-            cube = this.moveUw(cube, nbLayer);
+            cube = this.moveU(cube);
         return cube;
     }
 
-    // D
+    //#########################################################
+    //############ D MOVES ####################################
+    //#########################################################
 
-    public Cube moveDw(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveD(Cube cube){
         int size = cube.down.length;
-        int layers = nbLayer.orElse(2);
         cube.down = this.rotateUtils.rotate(cube.down);
 
         String[][] newFront = this.rotateUtils.genEmptyFace(size);
@@ -57,13 +56,11 @@ public class WMoves extends Moves {
         String[][] newRight = this.rotateUtils.genEmptyFace(size);
         String[][] newBack = this.rotateUtils.genEmptyFace(size);
 
-        for(int j=0;j<layers;j++){
-            for(int i=0;i<size;i++){
-                newFront[size-(1+j)][i] = cube.left[size-(1+j)][i];
-                newLeft[size-(1+j)][i] = cube.back[size-(1+j)][i];
-                newRight[size-(1+j)][i] = cube.front[size-(1+j)][i];
-                newBack[size-(1+j)][i] = cube.right[size-(1+j)][i];
-            }
+        for(int i=0;i<size;i++){
+            newFront[size-1][i] = cube.left[size-1][i];
+            newLeft[size-1][i] = cube.back[size-1][i];
+            newRight[size-1][i] = cube.front[size-1][i];
+            newBack[size-1][i] = cube.right[size-1][i];
         }
 
         cube.front = this.rotateUtils.transfert(cube.front, newFront);
@@ -74,23 +71,24 @@ public class WMoves extends Moves {
         return cube;
     }
 
-    public Cube moveDwPrime(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveDPrime(Cube cube){
         for(int i=0;i<3;i++)
-            cube = this.moveDw(cube, nbLayer);
+            cube = this.moveD(cube);
         return cube;
     }
 
-    public Cube moveDw2(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveD2(Cube cube){
         for(int i=0;i<2;i++)
-            cube = this.moveDw(cube, nbLayer);
+            cube = this.moveD(cube);
         return cube;
     }
 
-    // R
+    //#########################################################
+    //################## R MOVES ##############################
+    //#########################################################
 
-    public Cube moveRw(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveR(Cube cube){
         int size = cube.right.length;
-        int layers = nbLayer.orElse(2);
         cube.right = this.rotateUtils.rotate(cube.right);
 
         String[][] newFront = this.rotateUtils.genEmptyFace(size);
@@ -98,13 +96,11 @@ public class WMoves extends Moves {
         String[][] newBack = this.rotateUtils.genEmptyFace(size);
         String[][] newDown = this.rotateUtils.genEmptyFace(size);
 
-        for(int j=0;j<layers;j++){
-            for(int i=0;i<size;i++){
-                newFront[i][size-(1+j)] = cube.down[i][size-(1+j)];
-                newUp[i][size-(1+j)] = cube.front[i][size-(1+j)];
-                newBack[i][size-(1+j)] = cube.up[i][size-(1+j)];
-                newDown[i][j] = cube.back[i][j];
-            }
+        for(int i=0;i<size;i++){
+            newFront[i][size-1] = cube.down[i][size-1];
+            newUp[i][size-1] = cube.front[i][size-1];
+            newBack[i][size-1] = cube.up[i][size-1];
+            newDown[i][0] = cube.back[i][0];
         }
 
         cube.front = this.rotateUtils.transfert(cube.front, newFront);
@@ -115,23 +111,24 @@ public class WMoves extends Moves {
         return cube;
     }
 
-    public Cube moveRwPrime(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveRPrime(Cube cube){
         for(int i=0;i<3;i++)
-            cube = this.moveRw(cube, nbLayer);
+            cube = this.moveR(cube);
         return cube;
     }
 
-    public Cube moveRw2(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveR2(Cube cube){
         for(int i=0;i<2;i++)
-            cube = this.moveRw(cube, nbLayer);
+            cube = this.moveR(cube);
         return cube;
     }
 
-    // L
+    //#########################################################
+    //################## L MOVES ##############################
+    //#########################################################
 
-    public Cube moveLw(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveL(Cube cube){
         int size = cube.left.length;
-        int layers = nbLayer.orElse(2);
         cube.left = this.rotateUtils.rotate(cube.left);
 
         String[][] newUp = this.rotateUtils.genEmptyFace(size);
@@ -139,13 +136,11 @@ public class WMoves extends Moves {
         String[][] newDown = this.rotateUtils.genEmptyFace(size);
         String[][] newBack = this.rotateUtils.genEmptyFace(size);
 
-        for(int j=0;j<layers;j++) {
-            for (int i = 0; i < size; i++) {
-                newFront[i][j] = cube.up[i][j];
-                newDown[i][j] = cube.front[i][j];
-                newBack[i][j] = cube.down[i][j];
-                newUp[i][size - (1+j)] = cube.back[i][size - (1+j)];
-            }
+        for(int i=0;i<size;i++){
+            newFront[i][0] = cube.up[i][0];
+            newDown[i][0] = cube.front[i][0];
+            newBack[i][0] = cube.down[i][0];
+            newUp[i][size-1] = cube.back[i][size-1];
         }
 
         cube.front = this.rotateUtils.transfert(cube.front, newFront);
@@ -156,22 +151,25 @@ public class WMoves extends Moves {
         return cube;
     }
 
-    public Cube moveLwPrime(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveLPrime(Cube cube){
         for(int i=0;i<3;i++)
-            cube = this.moveLw(cube, nbLayer);
+            cube = this.moveL(cube);
         return cube;
     }
 
-    public Cube moveLw2(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveL2(Cube cube){
         for(int i=0;i<2;i++)
-            cube = this.moveLw(cube, nbLayer);
+            cube = this.moveL(cube);
         return cube;
     }
 
-    public Cube moveFw(Cube cube, Optional<Integer> nbLayer){
+    // ########################################################################
+    // ############## F MOVES #################################################
+    // ########################################################################
+
+    public Cube moveF(Cube cube){
         // to test
         int size = cube.front.length;
-        int layers = nbLayer.orElse(2);
         cube.front = this.rotateUtils.rotate(cube.front);
 
         String[][] newUp = this.rotateUtils.genEmptyFace(size);
@@ -179,13 +177,11 @@ public class WMoves extends Moves {
         String[][] newRight = this.rotateUtils.genEmptyFace(size);
         String[][] newDown = this.rotateUtils.genEmptyFace(size);
 
-        for(int j=0;j<layers;j++){
-            for(int i=0;i<size;i++){
-                newUp[i][size-(1+j)] = cube.left[i][size-(1+j)];
-                newLeft[j][i] = cube.down[j][i];
-                newRight[size-(1+j)][i] = cube.up[size-(1+j)][i];
-                newDown[i][j] = cube.right[i][j];
-            }
+        for(int i=0;i<size;i++){
+            newUp[i][size-1] = cube.left[i][size-1];
+            newLeft[0][i] = cube.down[0][i];
+            newRight[size-1][i] = cube.up[size-1][i];
+            newDown[i][0] = cube.right[i][0];
         }
 
         cube.up = this.rotateUtils.transfert(cube.up, this.rotateUtils.rotate(newUp));
@@ -196,15 +192,37 @@ public class WMoves extends Moves {
         return cube;
     }
 
-    public Cube moveFwPrime(Cube cube, Optional<Integer> nbLayer){
+    public Cube moveFPrime(Cube cube){
         for(int i=0;i<3;i++)
-            cube = this.moveFw(cube, nbLayer);
+            cube = this.moveF(cube);
         return cube;
     }
 
-    public Cube moveFw2(Cube cube,  Optional<Integer> nbLayer){
+    public Cube moveF2(Cube cube){
         for(int i=0;i<2;i++)
-            cube = this.moveFw(cube, nbLayer);
+            cube = this.moveF(cube);
         return cube;
     }
+
+    // ########################################################################
+    // ############## B MOVES #################################################
+    // ########################################################################
+
+    public Cube moveB(Cube cube){
+        // not implemented yet
+        return cube;
+    }
+
+    public Cube moveBPrime(Cube cube){
+        for(int i=0;i<3;i++)
+            cube = this.moveB(cube);
+        return cube;
+    }
+
+    public Cube moveB2(Cube cube){
+        for(int i=0;i<2;i++)
+            cube = this.moveB(cube);
+        return cube;
+    }
+
 }

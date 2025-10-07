@@ -7,12 +7,12 @@ import javarubik.exceptions.CubeMoveException;
 public class Mover {
 
     private final AxisMoves axisMoves;
-    private final Moves moves;
+    private final STDMoves moves;
     private final WMoves wmoves;
 
     public Mover(){
         this.axisMoves = new AxisMoves();
-        this.moves = new Moves();
+        this.moves = new STDMoves();
         this.wmoves = new WMoves();
     }
 
