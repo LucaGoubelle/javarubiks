@@ -2,7 +2,7 @@ package solversCube.solver2x2.handlers;
 
 import javarubik.data.Cube;
 import javarubik.exceptions.CubeMoveException;
-import javarubik.move.Mover;
+
 import solversCube.solver2x2.processors.firstFace.WBOProcessor;
 import solversCube.solver2x2.processors.firstFace.WGOProcessor;
 import solversCube.solver2x2.processors.firstFace.WGRProcessor;
@@ -10,17 +10,16 @@ import solverHelpers.seekers.Corner2Seeker;
 
 import java.util.List;
 
-public class FirstLayerHandler {
+public class FirstLayerHandler extends Handler {
 
     private final WGRProcessor procWGR;
     private final WGOProcessor procWGO;
     private final WBOProcessor procWBO;
     private final Corner2Seeker seeker;
-    private final Mover mover;
 
     public FirstLayerHandler(){
+        super();
         this.seeker = new Corner2Seeker();
-        this.mover = new Mover();
         this.procWGR = new WGRProcessor();
         this.procWGO = new WGOProcessor();
         this.procWBO = new WBOProcessor();

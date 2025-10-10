@@ -2,7 +2,7 @@ package solversCube.solver3x3.handlers;
 
 import javarubik.data.Cube;
 
-public class FirstLayerHandler {
+public class FirstLayerHandler extends Handler {
 
     private Cube insertWBR(Cube cube){
         // implement this method

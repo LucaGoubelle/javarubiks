@@ -2,7 +2,6 @@ package solversCube.solver2x2.handlers;
 
 import javarubik.data.Cube;
 import javarubik.exceptions.CubeMoveException;
-import javarubik.move.Mover;
 
 import solversCube.solver2x2.processors.firstFace.WBRProcessor;
 import solverHelpers.scanners.Cube2x2Scanner;
@@ -10,15 +9,13 @@ import solverHelpers.seekers.Corner2Seeker;
 
 import java.util.List;
 
-public class StartHandler {
-
-    private final Mover mover;
+public class StartHandler extends Handler {
     private final Cube2x2Scanner scanner;
     private final WBRProcessor proc;
     private final Corner2Seeker seeker;
 
     public StartHandler(){
-        this.mover = new Mover();
+        super();
         this.proc = new WBRProcessor();
         this.scanner = new Cube2x2Scanner();
         this.seeker = new Corner2Seeker();

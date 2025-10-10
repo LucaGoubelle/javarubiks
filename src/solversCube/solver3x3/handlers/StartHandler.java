@@ -2,19 +2,18 @@ package solversCube.solver3x3.handlers;
 
 import javarubik.data.Cube;
 import javarubik.exceptions.CubeMoveException;
-import javarubik.move.Mover;
 
 import solverHelpers.scanners.Cube3x3Scanner;
 
 import java.util.HashMap;
 
-public class StartHandler {
+public class StartHandler extends Handler {
 
-    private final Mover mover;
+
     private final Cube3x3Scanner scanner;
 
     public StartHandler(){
-        this.mover = new Mover();
+        super();
         this.scanner = new Cube3x3Scanner();
     }
 

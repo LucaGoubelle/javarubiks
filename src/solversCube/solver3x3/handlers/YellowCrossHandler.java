@@ -2,7 +2,7 @@ package solversCube.solver3x3.handlers;
 
 import javarubik.data.Cube;
 
-public class YellowCrossHandler {
+public class YellowCrossHandler extends Handler {
 
     private Cube create(Cube cube){
         // implement this method

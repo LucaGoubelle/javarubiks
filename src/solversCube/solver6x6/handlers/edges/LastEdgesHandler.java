@@ -1,8 +1,9 @@
 package solversCube.solver6x6.handlers.edges;
 
 import javarubik.data.Cube;
+import solversCube.solver6x6.handlers.Handler;
 
-public class LastEdgesHandler {
+public class LastEdgesHandler extends Handler {
     public Cube handle(Cube cube){
         // implement this
         return cube;

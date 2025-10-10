@@ -3,7 +3,7 @@ package solversMinx.solverMegaminx.handlers;
 import javaminx.data.models.Megaminx;
 import solversMinx.solverMegaminx.handlers.prisms.*;
 
-public class PrismsHandler {
+public class PrismsHandler extends Handler {
     private final MagentaPrismHandler magentaPrismHandler;
     private final LimePrismHandler limePrismHandler;
     private final BeigePrismHandler beigePrismHandler;

@@ -2,6 +2,7 @@ package solversMinx.solverKilominx;
 
 import javaminx.data.models.Kilominx;
 import javaminx.exceptions.MinxMoverException;
+
 import solversMinx.solverKilominx.handlers.*;
 
 public class SolverKilominx {

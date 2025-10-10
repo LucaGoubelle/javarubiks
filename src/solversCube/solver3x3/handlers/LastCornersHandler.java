@@ -2,7 +2,7 @@ package solversCube.solver3x3.handlers;
 
 import javarubik.data.Cube;
 
-public class LastCornersHandler {
+public class LastCornersHandler extends Handler {
 
     private Cube permute(Cube cube){
         // implement this method

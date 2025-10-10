@@ -2,7 +2,6 @@ package solversMinx.solverKilominx.handlers;
 
 import javaminx.data.models.Kilominx;
 import javaminx.exceptions.MinxMoverException;
-import javaminx.move.kilo.KilominxMover;
 
 import minxSolverHelpers.kilominx.KilominxCornerSeeker;
 
@@ -10,9 +9,7 @@ import solversMinx.solverKilominx.processors.middleCorners.*;
 
 import java.util.List;
 
-public class MiddleCornersHandler {
-
-    private final KilominxMover mover;
+public class MiddleCornersHandler extends Handler {
     private final KilominxCornerSeeker seeker;
 
     // processors
@@ -23,7 +20,7 @@ public class MiddleCornersHandler {
     private final BeigeRedGreenProcessor brgProcessor;
 
     public MiddleCornersHandler(){
-        this.mover = new KilominxMover();
+        super();
         this.seeker = new KilominxCornerSeeker();
         this.mbrProcessor = new MagentaBlueRedProcessor();
         this.lybProcessor = new LimeYellowBlueProcessor();

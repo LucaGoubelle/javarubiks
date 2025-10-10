@@ -2,8 +2,9 @@ package solversMinx.solverMegaminx.handlers.firstFace;
 
 import javaminx.data.models.Megaminx;
 import javaminx.exceptions.MinxMoverException;
-import javaminx.move.mega.MegaminxMover;
+
 import minxSolverHelpers.megaminx.MegaminxEdgeSeeker;
+import solversMinx.solverMegaminx.handlers.Handler;
 import solversMinx.solverMegaminx.processors.firstEdges.WBProcessor;
 import solversMinx.solverMegaminx.processors.firstEdges.WRProcessor;
 import solversMinx.solverMegaminx.processors.firstEdges.WYProcessor;
@@ -11,17 +12,16 @@ import solversMinx.solverMegaminx.processors.firstEdges.WYProcessor;
 import java.util.HashMap;
 import java.util.List;
 
-public class WhiteStarHandler {
+public class WhiteStarHandler extends Handler {
 
     private final MegaminxEdgeSeeker seeker;
-    private final MegaminxMover mover;
     private final WBProcessor wbProcessor;
     private final WRProcessor wrProcessor;
     private final WYProcessor wyProcessor;
 
     public WhiteStarHandler(){
+        super();
         this.seeker = new MegaminxEdgeSeeker();
-        this.mover = new MegaminxMover();
         this.wbProcessor = new WBProcessor();
         this.wrProcessor = new WRProcessor();
         this.wyProcessor = new WYProcessor();

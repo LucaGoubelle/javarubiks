@@ -1,8 +1,9 @@
 package solversCube.solver4x4.handlers.centers;
 
 import javarubik.data.Cube;
+import solversCube.solver4x4.handlers.Handler;
 
-public class RedCenterHandler {
+public class RedCenterHandler extends Handler {
     public Cube handle(Cube cube){
         // implement this
         return cube;

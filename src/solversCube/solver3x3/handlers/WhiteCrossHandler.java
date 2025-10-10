@@ -2,7 +2,7 @@ package solversCube.solver3x3.handlers;
 
 import javarubik.data.Cube;
 
-public class WhiteCrossHandler {
+public class WhiteCrossHandler extends Handler {
     private Cube insertWB(Cube cube){
         // implement this method
         return cube;

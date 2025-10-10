@@ -2,7 +2,6 @@ package solversMinx.solverKilominx.handlers;
 
 import javaminx.data.models.Kilominx;
 import javaminx.exceptions.MinxMoverException;
-import javaminx.move.kilo.KilominxMover;
 
 import minxSolverHelpers.kilominx.KilominxCornerSeeker;
 
@@ -13,10 +12,9 @@ import solversMinx.solverKilominx.processors.firstCorners.WPYProcessor;
 
 import java.util.List;
 
-public class FirstFaceHandler {
+public class FirstFaceHandler extends Handler {
 
     private final KilominxCornerSeeker seeker;
-    private final KilominxMover mover;
 
     //processors
     private final WGRProcessor wgrProcessor;
@@ -25,8 +23,8 @@ public class FirstFaceHandler {
     private final WPYProcessor wpyProcessor;
 
     public FirstFaceHandler(){
+        super();
         this.seeker = new KilominxCornerSeeker();
-        this.mover = new KilominxMover();
         this.wgrProcessor = new WGRProcessor();
         this.wbyProcessor = new WBYProcessor();
         this.wgpProcessor = new WGPProcessor();

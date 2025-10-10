@@ -2,18 +2,18 @@ package solversMinx.solverMegaminx.handlers.firstFace;
 
 import javaminx.data.models.Megaminx;
 import javaminx.exceptions.MinxMoverException;
-import javaminx.move.mega.MegaminxMover;
+
 import minxSolverHelpers.megaminx.MegaminxScanner;
+import solversMinx.solverMegaminx.handlers.Handler;
 import solversMinx.solverMegaminx.processors.CenterProcessor;
 
-public class StartHandler {
+public class StartHandler extends Handler {
     private final MegaminxScanner scanner;
-    private final MegaminxMover mover;
     private final CenterProcessor processor;
 
     public StartHandler(){
+        super();
         this.scanner = new MegaminxScanner();
-        this.mover = new MegaminxMover();
         this.processor = new CenterProcessor();
     }
 

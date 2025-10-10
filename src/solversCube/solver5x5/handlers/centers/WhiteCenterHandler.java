@@ -1,8 +1,9 @@
 package solversCube.solver5x5.handlers.centers;
 
 import javarubik.data.Cube;
+import solversCube.solver5x5.handlers.Handler;
 
-public class WhiteCenterHandler {
+public class WhiteCenterHandler extends Handler{
 
     public Cube handle(Cube cube){
         // implement this

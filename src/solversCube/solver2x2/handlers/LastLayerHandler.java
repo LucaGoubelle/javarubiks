@@ -2,31 +2,26 @@ package solversCube.solver2x2.handlers;
 
 import javarubik.data.Cube;
 import javarubik.exceptions.CubeMoveException;
-import javarubik.move.Mover;
+
 import solversCube.solver2x2.processors.lastFace.OLLProcessor;
 import solversCube.solver2x2.processors.lastFace.PLLProcessor;
 import solverHelpers.advanced.OLLScanner;
 import solverHelpers.advanced.PLLScanner;
-import solverHelpers.scanners.Cube2x2Scanner;
 
 import java.util.HashMap;
 
-public class LastLayerHandler {
-
-    private final Mover mover;
+public class LastLayerHandler extends Handler {
     private final OLLScanner ollScanner;
     private final OLLProcessor ollProc;
     private final PLLScanner pllScanner;
     private final PLLProcessor pllProc;
-    private final Cube2x2Scanner scanner;
 
     public LastLayerHandler(){
-        this.mover = new Mover();
+        super();
         this.ollScanner = new OLLScanner();
         this.ollProc = new OLLProcessor();
         this.pllScanner = new PLLScanner();
         this.pllProc = new PLLProcessor();
-        this.scanner = new Cube2x2Scanner();
     }
 
     public Cube handle(Cube cube) throws CubeMoveException {
