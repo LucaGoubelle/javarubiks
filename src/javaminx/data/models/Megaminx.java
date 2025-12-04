@@ -1,7 +1,5 @@
 package javaminx.data.models;
 
-import javaminx.data.models.Minx;
-
 public class Megaminx extends Minx {
     public String[][] up;
     public String[][] front;
