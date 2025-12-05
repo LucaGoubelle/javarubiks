@@ -1,4 +1,4 @@
-package solversCube.solver3x3CFOP.cases;
+package solversCube.solver3x3CFOP.cases.F2LCases;
 
 import java.util.HashMap;
 
