@@ -1,7 +1,7 @@
 package solverHelpers.advanced;
 
 import javarubik.data.Cube;
-import solverHelpers.CrownCaster;
+import solverHelpers.casters.CrownCaster;
 import solverHelpers.CrownScanner;
 
 import java.util.List;

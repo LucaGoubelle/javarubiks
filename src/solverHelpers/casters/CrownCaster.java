@@ -1,4 +1,4 @@
-package solverHelpers;
+package solverHelpers.casters;
 
 import java.util.List;
 
