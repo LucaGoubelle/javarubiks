@@ -19,12 +19,13 @@ public class F2LHandler extends Handler {
     }
 
     public Cube handleF2LWBR(Cube cube) throws CubeMoveException {
-        String sequence1 = this.f2lScanner.scanPairLeft(cube);
-        if(this.f2lPairLeftCases.cases.containsKey(sequence1))
-            return this.mover.multiMoves(cube, this.f2lPairLeftCases.cases.get(sequence1));
-        String sequence2 = this.f2lScanner.scanPairRight(cube);
-        if(this.f2lPairRightCases.cases.containsKey(sequence2))
-            return this.mover.multiMoves(cube, this.f2lPairRightCases.cases.get(sequence2));
+        String sequence = this.f2lScanner.scanPairLeft(cube);
+        if(this.f2lPairLeftCases.cases.containsKey(sequence))
+            return this.mover.multiMoves(cube, this.f2lPairLeftCases.cases.get(sequence));
+        sequence = this.f2lScanner.scanPairRight(cube);
+        if(this.f2lPairRightCases.cases.containsKey(sequence))
+            return this.mover.multiMoves(cube, this.f2lPairRightCases.cases.get(sequence));
+        sequence = this.f2lScanner.scanIn(cube);
         //todo: implement next steps
         // - In, HalfIn, split ...
         return cube;
