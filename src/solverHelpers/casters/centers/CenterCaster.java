@@ -32,7 +32,7 @@ public class CenterCaster {
 
     public String cast(Cube cube, String face, String colorToFilter) throws Exception {
         if(cube.front.length != this.size)
-            throw new Exception("Cube must be a "+this.size+"x"+this.size+" to use Center5x5Caster class");
+            throw new Exception("Cube must be a "+this.size+"x"+this.size+" to use CenterCaster class");
         String[][] actualFace = this.getActualFace(cube, face);
         String[][] actualCenters = this.extractCenters(actualFace);
         return this.getStringCenters(colorToFilter, actualCenters);
