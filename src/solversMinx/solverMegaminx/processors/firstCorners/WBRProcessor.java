@@ -1,16 +1,12 @@
 package solversMinx.solverMegaminx.processors.firstCorners;
 
-import java.util.HashMap;
+import solversMinx.solverMegaminx.processors.Processor;
 
-public class WBRProcessor {
-    private HashMap<String, String> data;
+public class WBRProcessor extends Processor {
 
     public WBRProcessor(){
-        this.data = new HashMap<>();
+        super();
         // add cases to processes
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }

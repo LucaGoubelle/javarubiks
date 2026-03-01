@@ -1,17 +1,12 @@
 package solversMinx.solverMegaminx.processors.firstEdges;
 
-import java.util.HashMap;
+import solversMinx.solverMegaminx.processors.Processor;
 
-public class WRProcessor {
-    private HashMap<String, String> data;
+public class WRProcessor extends Processor {
 
     public WRProcessor(){
-        this.data = new HashMap<>();
+        super();
         // add cases to processes
-    }
-
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
     }
 
 }

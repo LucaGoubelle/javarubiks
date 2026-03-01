@@ -1,15 +1,11 @@
 package solversMinx.solverKilominx.processors.lastCorners;
 
-import java.util.HashMap;
+import solversMinx.solverKilominx.processors.Processor;
 
-public class GreyOLLProcessor {
-    private HashMap<String, String> data;
+public class GreyOLLProcessor extends Processor {
 
     public GreyOLLProcessor(){
-        this.data = new HashMap<>();
+        super();
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }

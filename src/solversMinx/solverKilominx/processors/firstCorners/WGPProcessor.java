@@ -1,15 +1,12 @@
 package solversMinx.solverKilominx.processors.firstCorners;
 
-import java.util.HashMap;
+import solversMinx.solverKilominx.processors.Processor;
 
-public class WGPProcessor {
-    private HashMap<String, String> data;
+public class WGPProcessor extends Processor {
+
     public WGPProcessor(){
-        this.data = new HashMap<>();
+        super();
         // add cases to processes
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }

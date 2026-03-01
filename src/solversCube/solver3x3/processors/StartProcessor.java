@@ -1,11 +1,9 @@
 package solversCube.solver3x3.processors;
 
-import java.util.HashMap;
-
 public class StartProcessor extends Processor {
 
     public StartProcessor(){
-        this.data = new HashMap<>();
+        super();
 
         this.data.put("yellow_green","y2");
         this.data.put("yellow_red","y'");

@@ -1,15 +1,12 @@
 package solversMinx.solverKilominx.processors.firstCorners;
 
-import java.util.HashMap;
+import solversMinx.solverKilominx.processors.Processor;
 
-public class WBYProcessor {
-    private HashMap<String, String> data;
+public class WBYProcessor extends Processor {
+
     public WBYProcessor(){
-        this.data = new HashMap<>();
+        super();
         // add cases to processes
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }

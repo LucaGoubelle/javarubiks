@@ -1,15 +1,11 @@
 package solversMinx.solverKilominx.processors.middleCorners;
 
-import java.util.HashMap;
+import solversMinx.solverKilominx.processors.Processor;
 
-public class CyanGreenPurpleProcessor {
-    private HashMap<String, String> data;
+public class CyanGreenPurpleProcessor extends Processor {
 
     public CyanGreenPurpleProcessor(){
-        this.data = new HashMap<>();
+        super();
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }

@@ -1,15 +1,12 @@
 package solversMinx.solverKilominx.processors.firstCorners;
 
-import java.util.HashMap;
+import solversMinx.solverKilominx.processors.Processor;
 
-public class WPYProcessor {
-    private HashMap<String, String> data;
+public class WPYProcessor extends Processor {
+
     public WPYProcessor(){
-        this.data = new HashMap<>();
+        super();
         // add cases to processes
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }

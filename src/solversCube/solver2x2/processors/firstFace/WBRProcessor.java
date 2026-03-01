@@ -2,12 +2,10 @@ package solversCube.solver2x2.processors.firstFace;
 
 import solversCube.solver2x2.processors.Processor;
 
-import java.util.HashMap;
-
 public class WBRProcessor extends Processor {
 
     public WBRProcessor(){
-        this.data = new HashMap<>();
+        super();
 
         this.data.put("up_front_right::white_red_blue", "U' R2");
         this.data.put("up_front_right::blue_white_red", "R'");

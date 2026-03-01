@@ -1,12 +1,11 @@
 package solversMinx.solverKilominx.processors.firstCorners;
 
-import java.util.HashMap;
+import solversMinx.solverKilominx.processors.Processor;
 
-public class WBRProcessor {
-    private HashMap<String, String> data;
+public class WBRProcessor extends Processor {
 
     public WBRProcessor(){
-        this.data = new HashMap<>();
+        super();
         // up cases
         this.data.put("up_front_left::white_blue_red", "F' F' DR'");
         this.data.put("up_front_right::white_red_blue", "F2 DL");
@@ -23,7 +22,4 @@ public class WBRProcessor {
         this.data.put("down_back_absRight", "D' D'");
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }

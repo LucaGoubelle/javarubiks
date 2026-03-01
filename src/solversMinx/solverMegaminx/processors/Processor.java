@@ -1,4 +1,4 @@
-package solversCube.solver3x3.processors;
+package solversMinx.solverMegaminx.processors;
 
 import java.util.HashMap;
 
@@ -12,4 +12,5 @@ public class Processor {
     public String process(String inputData){
         return this.data.getOrDefault(inputData, "???");
     }
+
 }

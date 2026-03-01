@@ -1,16 +1,12 @@
 package solversMinx.solverKilominx.processors.middleCorners;
 
-import java.util.HashMap;
+import solversMinx.solverKilominx.processors.Processor;
 
-public class OrangePurpleYellowProcessor {
-    private HashMap<String, String> data;
+public class OrangePurpleYellowProcessor extends Processor {
 
     public OrangePurpleYellowProcessor(){
-        this.data = new HashMap<>();
+        super();
         // add cases to processes
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }
