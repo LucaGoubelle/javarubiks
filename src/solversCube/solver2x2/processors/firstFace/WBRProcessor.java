@@ -1,9 +1,10 @@
 package solversCube.solver2x2.processors.firstFace;
 
+import solversCube.solver2x2.processors.Processor;
+
 import java.util.HashMap;
 
-public class WBRProcessor {
-    private final HashMap<String, String> data;
+public class WBRProcessor extends Processor {
 
     public WBRProcessor(){
         this.data = new HashMap<>();
@@ -41,7 +42,4 @@ public class WBRProcessor {
         this.data.put("down_front_right::blue_red_white", "F D");
     }
 
-    public String process(String inputData){
-        return this.data.getOrDefault(inputData, "???");
-    }
 }
